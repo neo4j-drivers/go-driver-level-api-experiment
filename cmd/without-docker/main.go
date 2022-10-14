@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"github.com/neo4j-drivers/go-driver-level-api-experiment/pkg/neo4j_alpha"
+	"github.com/neo4j-drivers/go-driver-level-api-experiment/pkg/todo"
 	"github.com/neo4j/neo4j-go-driver/v5/neo4j"
 )
 
@@ -15,20 +16,10 @@ func main() {
 	}()
 	panicInTheErr(driver.VerifyConnectivity(ctx))
 
-	// TODO 1:
-	//  - use the above driver and run the Cypher query "RETURN 42"
-	//  - call panicInTheErr on the error, if the API you call returns one
-	//  - print the result with fmt.Println
-
-	// YOUR CODE GOES HERE
-
-	// TODO 2:
-	//  - use the above driver and run the Cypher query "UNWIND [1, 2] AS value RETURN value" against database "neo4j"
-	//  - call panicInTheErr on the error, if the API you call returns one
-	//  - sum each record value
-	//  - print the sum with fmt.Println
-
-	// YOUR CODE GOES HERE
+	// go there first ;)
+	todo.Todo1(driver)
+	// and when done with the first, go to that one :)
+	todo.Todo2(driver)
 }
 
 func basicAuth(username string, password string) neo4j.AuthToken {
